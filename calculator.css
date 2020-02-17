@@ -1,0 +1,101 @@
+/* Display, Margins, Screen Optimization */
+
+#Center{
+  margin: 5vh 5vh;
+}
+
+/* Font and Letters */
+
+a{
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+p, label, span, .button{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  font-weight: bolder;
+  color: grey;
+}
+
+label{
+  color: black;
+}
+
+.Profiler{
+  font-size: 2em;
+}
+
+/* Grid and Flex */
+
+.Modules{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Headbar{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.Content{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.Sub, .FeetInch, .StonePound{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Box, Cards, Objects */
+
+.Calculator{
+  padding-top: 10vh;
+
+}
+
+.BMI{
+  display: block;
+  margin: auto auto;
+  width: 25rem;
+  padding: 2.5rem;
+  outline: solid thin black;
+}
+
+.field{
+  margin-right: 4vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+#padded{
+  padding: 1vw;
+}
+
+.Submit , .button{
+  border: none;
+  background-color: black;
+  font-size: 12px;
+  color: white;
+  font-weight: bolder;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+.Submit{
+  width: 10em;
+  height: 3em;
+}
+
+
+/* Hover, Style, Animations */
+.Modules a:hover{
+  background-color: yellow;
+}
+
+.Modules a:nth-child(1){
+  background-color: yellow;
+}

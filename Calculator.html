@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="/Users/dewiparamita/Desktop/SimpleCalc/calculator.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="Center">
+
+      <!-- Headbar -->
+
+      <div class="Headbar">
+        <a href="index.html" class="Profiler">BMI Index</a>
+        <div class="Modules">
+          <a href="#">Calculator</a>
+          <a href="Support.html">Support</a>
+          <a href="NextSteps.html">Next Steps</a>
+        </div>
+      </div>
+
+      <div class="Content">
+
+        <!-- Calculator -->
+
+        <div class="Calculator">
+          <form class="BMI" action="" method="post">
+
+            <div id="Height padded">
+              <div class="Sub" id="padded">
+                <label for="Height">Your Height</label>
+                <input type="button" name="button" class="HeightMeasurement button" value="Switch to CM" onclick="switchCalculator(heightButton)">
+              </div>
+              <div class="FeetInch">
+                <div class="Feet">
+                  <input type="text" name="number" class="field" value="">
+                  <span class="TextFeet">Feet</span>
+                </div>
+                <div class="Inch">
+                  <input type="text" name="number" id="inches" class="field" value="">
+                  <span>Inch</span>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div id="Weight padded">
+              <div class="Sub" id="padded">
+                <label for="Weight">Your Weight</label>
+                <input type="button" name="button" class="WeightMeasurement button" value="Switch to KG" onclick="switchCalculator(weightButton)">
+              </div>
+              <div class="StonePound">
+                <div class="Stones">
+                  <input type="text" name="number" class="field" value="">
+                  <span class="TextStones">Stones</span>
+                </div>
+                <div class="Pounds">
+                  <input type="text" name="number" id="Pounds" class="field" value="">
+                  <span>Pounds</span>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div id="Age padded">
+              <label for="Age" id="padded">Age</label> <br>
+              <input type="text" name="years" id="old" class="field" value=""><span>Years</span>
+            </div>
+            <br>
+            <input type="submit" value="Submit" class="Submit button">
+          </form>
+        </div>
+
+        <!-- Other -->
+
+        <div class="other">
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Javascript goes here-->
+    <script type="text/javascript" src="/Users/dewiparamita/Desktop/SimpleCalc/calculator.js"></script>
+  </body>
+</html>
