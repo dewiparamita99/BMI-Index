@@ -1,0 +1,53 @@
+/* Display, Margins, Screen Optimization */
+
+#Center{
+  margin: 5vh 5vh;
+}
+
+/* Font and Letters */
+
+a{
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+  color: black;
+}
+
+p, label, span, .button{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  font-weight: bolder;
+  color: grey;
+}
+
+label{
+  color: black;
+}
+
+.Profiler{
+  font-size: 2em;
+}
+
+/* Grid and Flex */
+
+.Modules{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Headbar{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.Content{
+}
+
+/* Hover, Style, Animations */
+.Modules a:hover{
+  background-color: yellow;
+}
+
+.Modules a:nth-child(3){
+  background-color: yellow;
+}
