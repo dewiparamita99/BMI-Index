@@ -71,6 +71,7 @@ function calculateBodyMass() {
   //Formula BMI
   const BMI = weight/Math.pow(height,2);
   console.log (BMI);
+  return alert("Your BMI Index is " + BMI);
 }
 
 //Show Answer
