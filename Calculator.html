@@ -26,7 +26,6 @@
 
         <div class="Calculator">
           <form class="BMI" action="" method="post">
-
             <div id="Height padded">
               <div class="Sub" id="padded">
                 <label for="Height">Your Height</label>
@@ -34,11 +33,11 @@
               </div>
               <div class="FeetInch">
                 <div class="Feet">
-                  <input type="text" name="number" class="field" value="">
+                  <input type="number" name="weightInFeet" class="field" min="0">
                   <span class="TextFeet">Feet</span>
                 </div>
                 <div class="Inch">
-                  <input type="text" name="number" id="inches" class="field" value="">
+                  <input type="number" name="weightInInch" class="field" min="0">
                   <span>Inch</span>
                 </div>
               </div>
@@ -51,11 +50,11 @@
               </div>
               <div class="StonePound">
                 <div class="Stones">
-                  <input type="text" name="number" class="field" value="">
+                  <input type="number" name="weightInStones" class="field" min="0">
                   <span class="TextStones">Stones</span>
                 </div>
                 <div class="Pounds">
-                  <input type="text" name="number" id="Pounds" class="field" value="">
+                  <input type="number" name="weightInPounds" class="field" min="0">
                   <span>Pounds</span>
                 </div>
               </div>
@@ -63,10 +62,10 @@
             <hr>
             <div id="Age padded">
               <label for="Age" id="padded">Age</label> <br>
-              <input type="text" name="years" id="old" class="field" value=""><span>Years</span>
+              <input type="number" name="years" id="old" class="field" min="1" max="120" required><span>Years</span>
             </div>
             <br>
-            <input type="submit" value="Submit" class="Submit button">
+            <input type="button" value="Submit" class="Submit button" onclick="checkAnswer()">
           </form>
         </div>
 

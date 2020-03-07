@@ -40,9 +40,7 @@ function switchCalculator(button){
 }
 
 //Check Answer
-
-function calculateBodyMass() {
-  var cm, feet, inch, kg, stones, pounds;
+  let cm, feet, inch, kg, stones, pounds, age;
   let field, height, weight;
 
   field = document.querySelectorAll('.field');
@@ -52,7 +50,10 @@ function calculateBodyMass() {
   kg = field[2];
   stones = field[2];
   pounds = field[3];
+  age = field[4];
 
+
+function calculateBodyMass() {
   //Convert Height Measurement to Meter
     if (textFeet.innerHTML === 'Cm') {
       height = cm.value * 0.01 ;
@@ -75,7 +76,6 @@ function calculateBodyMass() {
 //Show Answer
 
 function showAnswer() {
-  calculateBodyMass();
   let answer, result, chart, showChart;
   answer = document.querySelector('.Answer');
   result = Number(calculateBodyMass());
@@ -98,5 +98,13 @@ function showAnswer() {
   } else if (result > 34.9){
     answer.textContent = 'You are Very Obese.' + ' ' + 'Your BMI Index is: ' + result;
     answer.append(chart);
+  }
+}
+
+function checkAnswer() {
+  if (cm.value > 0 && kg.value > 0 && age.value > 0) {
+    showAnswer();
+  } else {
+    alert("Make sure you fill in the form and your answer is a positive number!");
   }
 }
