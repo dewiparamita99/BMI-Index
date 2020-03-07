@@ -33,19 +33,34 @@ p{
 }
 
 .Headbar{
+  position: absolute;
   display: grid;
   grid-template-columns: auto auto;
+  left: 5vw;
+  right: 5vw;
+  width: 90vw;
+  z-index: 1;
 }
 
 /* Box, Cards, Objects */
 
 .WeightImage{
+  display: block;
   width: 100%;
-  height: 200%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  opacity: 0.75;
 }
 
 .Description{
-
+  position: absolute;
+  left: 0;
+  transform: translate(10%, 60%);
+  width: 55%;
 }
 
 /* Hover, Style, Animations */

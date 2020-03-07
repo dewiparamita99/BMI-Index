@@ -12,7 +12,7 @@ a{
   color: black;
 }
 
-p, label, span, .button{
+p, label, span, .button, .Answer{
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9em;
   font-weight: bolder;
@@ -36,11 +36,17 @@ label{
 }
 
 .Headbar{
+  position: absolute;
   display: grid;
   grid-template-columns: auto auto;
+  left: 5vw;
+  right: 5vw;
+  width: 90vw;
+  z-index: 1;
 }
 
 .Content{
+  padding-top: 10vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
@@ -51,11 +57,6 @@ label{
 }
 
 /* Box, Cards, Objects */
-
-.Calculator{
-  padding-top: 10vh;
-
-}
 
 .BMI{
   display: block;
@@ -69,6 +70,7 @@ label{
   margin-right: 4vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
+  width: 15em;
 }
 
 #padded{
@@ -90,6 +92,13 @@ label{
   height: 3em;
 }
 
+.Answer{
+  margin-left: 5vw;
+}
+
+.chart{
+    height: 80vh;
+}
 
 /* Hover, Style, Animations */
 .Modules a:hover{
@@ -98,4 +107,21 @@ label{
 
 .Modules a:nth-child(1){
   background-color: yellow;
+}
+
+/* Mobile */
+@media screen and (max-width: 800px) {
+  .Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .Answer{
+    margin: 5vh 0;
+  }
+
+  .chart{
+      width: 80vw;
+  }
 }

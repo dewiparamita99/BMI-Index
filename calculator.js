@@ -1,16 +1,13 @@
-//DOM
-
+//Calculator Start Here
 let textFeet = document.querySelector('.TextFeet');
 let textStones = document.querySelector('.TextStones');
 let inchGroup = document.querySelector('.Inch');
 let poundsGroup = document.querySelector('.Pounds');
-let button = document.getElementsByName('button')
+let button = document.getElementsByName('button');
+let BMI;
 
 const heightButton = button[0];
 const weightButton = button[1];
-
-let submitButton = document.querySelector('.Submit');
-
 
 function switchCalculator(button){
   //Toggle Input
@@ -43,16 +40,18 @@ function switchCalculator(button){
 }
 
 //Check Answer
+
 function calculateBodyMass() {
-  let field = document.querySelectorAll('.field');
-  var cm = field[0];
-  var feet = field[0];
-  var inch = field[1];
-  var kg = field[2];
-  var stones = field[2];
-  var pounds = field[3];
-  let height;
-  let weight;
+  var cm, feet, inch, kg, stones, pounds;
+  let field, height, weight;
+
+  field = document.querySelectorAll('.field');
+  cm = field[0];
+  feet = field[0];
+  inch = field[1];
+  kg = field[2];
+  stones = field[2];
+  pounds = field[3];
 
   //Convert Height Measurement to Meter
     if (textFeet.innerHTML === 'Cm') {
@@ -69,43 +68,35 @@ function calculateBodyMass() {
     }
 
   //Formula BMI
-  const BMI = weight/Math.pow(height,2);
-  console.log (BMI);
-  return alert("Your BMI Index is " + BMI);
+  BMI = weight/Math.pow(height,2);
+  return BMI.toFixed(1);
 }
 
 //Show Answer
 
+function showAnswer() {
+  calculateBodyMass();
+  let answer, result, chart, showChart;
+  answer = document.querySelector('.Answer');
+  result = Number(calculateBodyMass());
+  chart = document.createElement('img');
+  chart.src = 'https://bmicalculatorireland.com/wp-content/uploads/2018/11/calculate-body-mass-index-bmi-calculator-ireland-e1542038017641.png';
+  chart.className = 'chart';
 
-//Show Answer Table -- Continue filling the aswer! aaaaaaaa
-function showBMITable(){
-  const cmValue = [193.0, 190.5, 187.9, 185.4, 182.8, 180.3, 177.8, 175.2, 172.7, 170.1, 167.6, 165.1, 162.5, 160, 157.4, 154.9, 152.4];
-  const ftValue = [6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5];
-  const inchValue = [4,3,2,1,0,11,10,9,8,7,6,5,4,3,2,1,0];
-  const answer = [19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,
-                  18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,36,37,38,39,40,
-                  18,19,20,21,22,22,23,24,25,26,27,28,29,30,31,32,33,33,34,35,36,37,38,39,
-                  17,18,19,20,21,22,23,24,24,25,26,27,28,29,30,31,32,32,33,34,35,36,37,38,
-                  17,18,18,19,20,21,22,23,24,24,25,26,27,28,29,30,31,31,32,33,34,35,36,37,
-                  ];
-  //2D Array
-  var tableAnswer = new Array(24);
-  var h = 0;
-
-  for (var i = 0; i < tableAnswer.length; i++) {
-    tableAnswer[i] = [];
+  if (result < 18.5) {
+    answer.textContent = 'You are underweight.' + ' ' + 'Your BMI Index is: ' + result;
+    answer.append(chart);
+  } else if (18.5 <= result <= 24.9) {
+    answer.textContent = 'You are in good shape!' + ' ' + 'Your BMI Index is: ' + result;
+    answer.append(chart);
+  } else if (25 <= result <= 29.9) {
+    answer.textContent = 'You are overweight.' + ' ' + 'Your BMI Index is: ' + result;
+    answer.append(chart);
+  } else if (30 <= result <= 34.9){
+    answer.textContent = 'You are Obese.' + ' ' + 'Your BMI Index is: ' + result;
+    answer.append(chart);
+  } else if (result > 34.9){
+    answer.textContent = 'You are Very Obese.' + ' ' + 'Your BMI Index is: ' + result;
+    answer.append(chart);
   }
-
-  for (var i = 0; i < 24; i++) {
-    for (var j = 0; j < 1; j++) {
-      tableAnswer[i][j] = answer[h++];
-    }
-  }
-
-  for (var i =0; i < 24; i++){
-   for (var i = 0; i < 17; i++) {
-     //Make a new Element and ability to modify in CSS
-     tableAnswer[i][j];
-   }
- }
 }

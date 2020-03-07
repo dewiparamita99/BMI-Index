@@ -36,8 +36,13 @@ label{
 }
 
 .Headbar{
+  position: absolute;
   display: grid;
   grid-template-columns: auto auto;
+  left: 5vw;
+  right: 5vw;
+  width: 90vw;
+  z-index: 1;
 }
 
 .Content{
