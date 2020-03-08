@@ -51,7 +51,12 @@ label{
   grid-template-columns: 1fr 2fr;
 }
 
-.Sub, .FeetInch, .StonePound{
+.FeetInch, .StonePound{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.Sub{
   display: flex;
   justify-content: space-between;
 }
@@ -60,21 +65,19 @@ label{
 
 .BMI{
   display: block;
-  margin: auto auto;
-  width: 25rem;
-  padding: 2.5rem;
+  padding: 2vw;
   outline: solid thin black;
 }
 
 .field{
-  margin-right: 4vw;
+  margin-right: 1vw;
   margin-top: 1vh;
   margin-bottom: 1vh;
-  width: 15em;
+  width: 80%;
 }
 
 #padded{
-  padding: 1vw;
+  padding-bottom: 1vw;
 }
 
 .Submit , .button{
@@ -88,8 +91,8 @@ label{
 }
 
 .Submit{
-  width: 10em;
-  height: 3em;
+  width: 30%;
+  height: 2rem;
 }
 
 .Answer{
@@ -117,17 +120,12 @@ label{
     justify-content: center;
   }
 
-  .BMI{
-    padding: 5vw;
-  }
-
   .Calculator{
     width: 80%;
     height: 45%;
   }
 
   .field{
-    width: 25vw;
     margin-right: 1vw;
   }
 
