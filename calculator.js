@@ -86,13 +86,13 @@ function showAnswer() {
   if (result < 18.5) {
     answer.textContent = 'You are underweight.' + ' ' + 'Your BMI Index is: ' + result;
     answer.append(chart);
-  } else if (18.5 <= result <= 24.9) {
+  } else if (18.5 <= result && result <= 24.9) {
     answer.textContent = 'You are in good shape!' + ' ' + 'Your BMI Index is: ' + result;
     answer.append(chart);
-  } else if (25 <= result <= 29.9) {
+  } else if (25 <= result && result <= 29.9) {
     answer.textContent = 'You are overweight.' + ' ' + 'Your BMI Index is: ' + result;
     answer.append(chart);
-  } else if (30 <= result <= 34.9){
+  } else if (30 <= result && result <= 34.9){
     answer.textContent = 'You are Obese.' + ' ' + 'Your BMI Index is: ' + result;
     answer.append(chart);
   } else if (result > 34.9){
