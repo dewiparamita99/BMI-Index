@@ -1,7 +1,7 @@
 /* Display, Margins, Screen Optimization */
 
 #Center{
-  margin: 5vh 5vh;
+  margin: 2rem 5vh;
 }
 
 /* Font and Letters */
@@ -46,7 +46,7 @@ label{
 }
 
 .Content{
-  padding-top: 10vh;
+  padding-top: 7rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
@@ -115,6 +115,32 @@ label{
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .BMI{
+    padding: 5vw;
+  }
+
+  .Calculator{
+    width: 80vw;
+    height: 45vh;
+  }
+
+  .field{
+    width: 25vw;
+    margin-right: 1vw;
+  }
+
+  p, label, span, .button, .Answer{
+    font-size: 2vw;
+  }
+
+  a{
+    font-size: 3vw;
+  }
+
+  .Profiler{
+    font-size: 5vw;
   }
 
   .Answer{

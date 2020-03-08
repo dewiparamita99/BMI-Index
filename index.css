@@ -1,7 +1,7 @@
 /* Display, Margins, Screen Optimization */
 
 #Center{
-  margin: 5vh 5vh;
+  margin: 2rem 5vh;
 }
 
 .Content{
@@ -66,4 +66,15 @@ p{
 /* Hover, Style, Animations */
 .Modules a:hover{
   background-color: yellow;
+}
+
+/* Mobile */
+@media screen and (max-width: 800px) {
+  a{
+    font-size: 3vw;
+  }
+
+  .Profiler{
+    font-size: 5vw;
+  }
 }
