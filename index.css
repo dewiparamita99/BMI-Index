@@ -70,7 +70,7 @@ p{
 
 /* Mobile */
 @media screen and (max-width: 800px) {
-  a{
+  a, p{
     font-size: 3vw;
   }
 
