@@ -53,58 +53,64 @@ function switchCalculator(button){
   age = field[4];
 
 
-function calculateBodyMass() {
-  //Convert Height Measurement to Meter
-    if (textFeet.innerHTML === 'Cm') {
-      height = cm.value * 0.01 ;
+  function checkAnswer() {
+    if (cm.value > 0 && kg.value > 0 && age.value > 0) {
+      showAnswer();
     } else {
-      height = feet.value * 0.3048; + inch.value * 0.0254;
+      alert("Make sure you fill in the form and your answer is a positive number!");
     }
+  }
 
-  //Convert Weight Measurement to KG
-    if (textStones.innerHTML === 'Kg') {
-      weight = kg.value;
-    } else {
-      weight = stones.value * 6.35029 + pounds.value * 0.453592;
-    }
+//Calculate
+  function calculateBodyMass() {
+    //Convert Height Measurement to Meter
+      if (textFeet.innerHTML === 'Cm') {
+        height = cm.value * 0.01 ;
+      } else {
+        height = feet.value * 0.3048; + inch.value * 0.0254;
+      }
 
-  //Formula BMI
-  BMI = weight/Math.pow(height,2);
-  return BMI.toFixed(1);
-}
+    //Convert Weight Measurement to KG
+      if (textStones.innerHTML === 'Kg') {
+        weight = kg.value;
+      } else {
+        weight = stones.value * 6.35029 + pounds.value * 0.453592;
+      }
+
+    //Formula BMI
+    BMI = weight/Math.pow(height,2);
+    return BMI.toFixed(1);
+  }
 
 //Show Answer
+  function showAnswer() {
+    let result = Number(calculateBodyMass());
+    let answer = document.querySelector('.Answer');
+    let chart = document.createElement('img');
 
-function showAnswer() {
-  let answer, result, chart, showChart;
-  answer = document.querySelector('.Answer');
-  result = Number(calculateBodyMass());
-  chart = document.createElement('img');
-  chart.src = 'https://bmicalculatorireland.com/wp-content/uploads/2018/11/calculate-body-mass-index-bmi-calculator-ireland-e1542038017641.png';
-  chart.className = 'chart';
+    let appendAnswer = {
+      underweight: `You are underweight. Your BMI Index is ${result}`,
+      good: `You are in good shape! Your BMI Index is ${result}`,
+      overweight: `You are overweight. Your BMI Index is ${result}`,
+      obese: `You are very obese. Your BMI Index is ${result}`,
+      showAll: function() {
+        if (result < 18.5) {
+          answer.textContent = this.underweight;
+        } else if (18.5 <= result && result <= 24.9) {
+          answer.textContent = this.good;
+        } else if (25 <= result && result <= 29.9) {
+          answer.textContent = this.overweight;
+        } else if (result >= 30){
+          answer.textContent = this.obese;
+        }
+        this.showChart();
+      },
+      showChart: function() {
+          chart.className = 'chart';
+          chart.src = 'https://bmicalculatorireland.com/wp-content/uploads/2018/11/calculate-body-mass-index-bmi-calculator-ireland-e1542038017641.png';
+        return answer.append(chart);
+      }
+    }
 
-  if (result < 18.5) {
-    answer.textContent = 'You are underweight.' + ' ' + 'Your BMI Index is: ' + result;
-    answer.append(chart);
-  } else if (18.5 <= result && result <= 24.9) {
-    answer.textContent = 'You are in good shape!' + ' ' + 'Your BMI Index is: ' + result;
-    answer.append(chart);
-  } else if (25 <= result && result <= 29.9) {
-    answer.textContent = 'You are overweight.' + ' ' + 'Your BMI Index is: ' + result;
-    answer.append(chart);
-  } else if (30 <= result && result <= 34.9){
-    answer.textContent = 'You are Obese.' + ' ' + 'Your BMI Index is: ' + result;
-    answer.append(chart);
-  } else if (result > 34.9){
-    answer.textContent = 'You are Very Obese.' + ' ' + 'Your BMI Index is: ' + result;
-    answer.append(chart);
+    return appendAnswer.showAll();
   }
-}
-
-function checkAnswer() {
-  if (cm.value > 0 && kg.value > 0 && age.value > 0) {
-    showAnswer();
-  } else {
-    alert("Make sure you fill in the form and your answer is a positive number!");
-  }
-}
